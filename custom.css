@@ -9,3 +9,6 @@
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
+.mdl-tabs__tab-bar{
+  justify-content: flex-start;
+}

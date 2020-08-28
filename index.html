@@ -115,7 +115,12 @@
                               <i class="mdlext-aria-toggle-material-icons"></i>
                             </header>
                             <section class="mdlext-accordion__tabpanel" role="tabpanel">
-                              <h5>Content #1 goes here</h5>
+                              <h5>Content #1 goes here
+                              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                                  <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                                  <span class="mdl-switch__label"></span>
+                                </label>
+                              </h5>
                               <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
                                 justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
                                 mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
@@ -151,40 +156,89 @@
                               </p>
                             </section>
                           </li>
-                          <li class="mdlext-accordion__panel" role="presentation">
-                            <header class="mdlext-accordion__tab" aria-expanded="false" role="tab">
-                              <i class="material-icons">accessibility</i>
-                              <span class="mdlext-accordion__tab__caption">Section 4</span>
-                              <i class="mdlext-aria-toggle-material-icons"></i>
-                            </header>
-                            <section class="mdlext-accordion__tabpanel" role="tabpanel">
-                              <h5>Content #4 goes here</h5>
-                              <p>Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
-                                ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
-                                maximus massa felis quis quam. usce tincidunt leo in est venenatis porta.
-                              </p>
-                            </section>
-                          </li>
-                          <li class="mdlext-accordion__panel" role="presentation">
-                            <header class="mdlext-accordion__tab" aria-expanded="false" role="tab">
-                              <i class="material-icons">share</i>
-                              <span class="mdlext-accordion__tab__caption">Section 5</span>
-                              <i class="mdlext-aria-toggle-material-icons"></i>
-                            </header>
-                            <section class="mdlext-accordion__tabpanel" role="tabpanel">
-                              <h5>Content #5 goes here</h5>
-                              <p>Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
-                                ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
-                                maximus massa felis quis quam. usce tincidunt leo in est venenatis porta.
-                              </p>
-                            </section>
-                          </li>
                         </ul>
                       </div>
                     </div>
+
+                    <div class="mdl-grid"> 
+                        
+                              
+                        <div class="mdl-cell mdl-cell--2-col">
+                              <button id="show-dialog" type="button" class="mdl-button">Show Dialog</button>
+                                <dialog class="mdl-dialog">
+                                  <h4 class="mdl-dialog__title">Allow data collection?</h4>
+                                  <div class="mdl-dialog__content">
+                                    <p>
+                                      Allowing us to collect data will let us get you the information you want faster.
+                                    </p>
+                                  </div>
+                                  <div class="mdl-dialog__actions">
+                                    <button type="button" class="mdl-button">Agree</button>
+                                    <button type="button" class="mdl-button close">Disagree</button>
+                                  </div>
+                                </dialog>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col">
+                            
+                        </div>
+                      </div>
+
+                    <div class="mdl-grid"> 
+                      <div class="mdl-cell mdl-cell--12-col">
+                        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                          <div class="mdl-tabs__tab-bar">
+                              <a href="#starks-panel" class="mdl-tabs__tab is-active">Starks</a>
+                              <a href="#lannisters-panel" class="mdl-tabs__tab">Lannisters</a>
+                              <a href="#targaryens-panel" class="mdl-tabs__tab">Targaryens</a>
+                          </div>
+                        
+                          <div class="mdl-tabs__panel is-active" id="starks-panel">
+                            <ul>
+                              <li>Eddard</li>
+                              <li>Catelyn</li>
+                              <li>Robb</li>
+                              <li>Sansa</li>
+                              <li>Brandon</li>
+                              <li>Arya</li>
+                              <li>Rickon</li>
+                            </ul>
+                          </div>
+                          <div class="mdl-tabs__panel" id="lannisters-panel">
+                            <ul>
+                              <li>Tywin</li>
+                              <li>Cersei</li>
+                              <li>Jamie</li>
+                              <li>Tyrion</li>
+                            </ul>
+                          </div>
+                          <div class="mdl-tabs__panel" id="targaryens-panel">
+                            <ul>
+                              <li>Viserys</li>
+                              <li>Daenerys</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    
             </div>
             </main>
         </div>
+        <script>
+            var dialog = document.querySelector('dialog');
+            var showDialogButton = document.querySelector('#show-dialog');
+            if (! dialog.showModal) {
+              dialogPolyfill.registerDialog(dialog);
+            }
+            showDialogButton.addEventListener('click', function() {
+              dialog.showModal();
+            });
+            dialog.querySelector('.close').addEventListener('click', function() {
+              dialog.close();
+            });
+          </script>
         <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
         <script src="./material.min.js"></script>
         <script type="text/javascript" src="node_modules/mdl-ext/lib/mdl-ext.min.js" charset="utf-8"></script>
